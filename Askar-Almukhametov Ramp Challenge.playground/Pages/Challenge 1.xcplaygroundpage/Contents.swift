@@ -35,4 +35,5 @@ if let data = Data(base64Encoded: prompt) {
     prompt2 = String(data: data, encoding: .utf8) ?? "failed to encode"
 }
 
+
 //: [Challenge 2](@next)

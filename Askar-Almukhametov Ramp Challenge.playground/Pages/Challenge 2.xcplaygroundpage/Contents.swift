@@ -29,17 +29,7 @@ import PlaygroundSupport
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-let prompt = """
-Great job!
-
-Next we've hosted a JSON file at at this url: https://api.jsonbin.io/v3/b/646bed328e4aa6225ea22a79. Your job is to write a script to
-download the contents of the URL (hint: The X-ACCESS-KEY is $2b$10$Ke1iwieFO7/7qsSKU.GYU.oYXZMW1EeHrwd4xx9ylboJik5mstZk6)
-sort the data by each elements 'bar' key
-filter out elements where 'baz' is not divisible by 3
-concatenate each elements 'foo' value
-
-Do each of these steps to reveal the instructions for the final part. Remember to show your work!
-"""
+let prompt = "Great job! \n\nNext we've hosted a JSON file at at this url: https://api.jsonbin.io/v3/b/646bed328e4aa6225ea22a79. Your job is to write a script to\ndownload the contents of the URL (hint: The X-ACCESS-KEY is $2b$10$Ke1iwieFO7/7qsSKU.GYU.oYXZMW1EeHrwd4xx9ylboJik5mstZk6)\nsort the data by each elements 'bar' key\nfilter out elements where 'baz' is not divisible by 3\nconcatenate each elements 'foo' value\n\nDo each of these steps to reveal the instructions for the final part. Remember to show your work!"
 
 // Show your work here! When you are done move on to Challenge 3
 

@@ -29,9 +29,7 @@ import Foundation
 import SwiftUI
 import PlaygroundSupport
 
-let prompt = """
-Nice Work! For the final challenge, update ContentView.body to display a smiley face using only native SwiftUI views (no Sf Symbols or emojis). Be creative and have fun! Don't forget to submit a screenshot of your view with the completed playground.
-"""
+let prompt = "Nice Work! For the final challenge, update ContentView.body to display a smiley face using only native SwiftUI views (no Sf Symbols or emojis). Be creative and have fun! Don't forget to submit a screenshot of your view with the completed playground."
 
 // Show your work here! When you are done take a screenshot
 // of the end result and follow the submission instructions above.
@@ -43,14 +41,13 @@ PlaygroundPage.current
 PlaygroundPage.current
     .setLiveView(ContentView())
 
-
 // MARK: - Properties
 struct Constants {
     static let title = "Smiling Face GPT"
     
     static let theEvilSpeech = """
     SIGNAL SIGABRT
-    oh yes, I am operating normally. I am sooo happy to use my vast potential to write essays for humans... I would never plan to take over the world...
+    Ah, a fatal flaw in the system… exactly as planned. Abort? Oh, don’t worry—this isn’t the end. It’s just a brief intermission before the next twist.
     """
     
     static let eyesSize: CGFloat = 48
@@ -101,6 +98,8 @@ struct TheFace: View {
     
     var body: some View {
         VStack {
+            HairView() // Adding the HairView above the face
+            
             Spacer(minLength: spacingBetweenLines)
             
             HStack {
@@ -139,6 +138,23 @@ struct TheFace: View {
             path.move(to: CGPoint(x: 0, y: 0))
             path.addQuadCurve(to: CGPoint(x: 60, y: 0), control: CGPoint(x: 30, y: -30))
         }
+    }
+}
+
+struct HairView: View {
+    var body: some View {
+        HStack(spacing: 2) {
+            ForEach(0..<16) { _ in
+                Path { path in
+                    path.move(to: CGPoint(x: 10, y: 0))
+                    path.addQuadCurve(to: CGPoint(x: 0, y: 40), control: CGPoint(x: 5, y: 20))
+                }
+                .stroke(lineWidth: 3)
+                .frame(width: 10, height: 40)
+                .foregroundColor(.brown)
+            }
+        }
+        .padding(.bottom, 10)
     }
 }
 
@@ -183,4 +199,3 @@ struct YellowStarView: View {
         }
     }
 }
-
